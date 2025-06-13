@@ -42,6 +42,7 @@ public class IntakeSubsystem extends SubsystemBase {
     }
   }
 
+  @AutoLogOutput
   public boolean hasCoral() {
     if (Robot.isSimulation()) {
       return _intakeSensorChooser.get();

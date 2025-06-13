@@ -9,6 +9,8 @@ import edu.wpi.first.hal.FRCNetComm.tResourceType;
 
 import org.littletonrobotics.junction.AutoLogOutput;
 
+import com.pathplanner.lib.util.DriveFeedforwards;
+
 import edu.wpi.first.hal.HAL;
 import edu.wpi.first.math.VecBuilder;
 import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
@@ -108,11 +110,11 @@ public class DrivetrainSubsystem extends SubsystemBase {
 
   public SwerveModulePosition[] getSwerveModulePositions() {
     return new SwerveModulePosition[] {
-      m_frontLeft.getPosition(),
-      m_frontRight.getPosition(),
-      m_rearLeft.getPosition(),
-      m_rearRight.getPosition()
-      };
+        m_frontLeft.getPosition(),
+        m_frontRight.getPosition(),
+        m_rearLeft.getPosition(),
+        m_rearRight.getPosition()
+    };
   }
 
   @Override
@@ -189,6 +191,38 @@ public class DrivetrainSubsystem extends SubsystemBase {
     m_rearLeft.setDesiredState(swerveModuleStates[2]);
     m_rearRight.setDesiredState(swerveModuleStates[3]);
   }
+
+  public void driveSpeeds(ChassisSpeeds speeds, DriveFeedforwards feedforwards) {
+    // Convert the commanded speeds into the correct units for the drivetrain
+    double xSpeedDelivered = speeds.vxMetersPerSecond * DriveConstants.kMaxSpeedMetersPerSecond;
+    double ySpeedDelivered = speeds.vyMetersPerSecond * DriveConstants.kMaxSpeedMetersPerSecond;
+    double rotDelivered = speeds.omegaRadiansPerSecond * DriveConstants.kMaxAngularSpeed;
+    if (Robot.isSimulation()) {
+      m_gyro.update(rotDelivered);
+    }
+
+    var swerveModuleStates = DriveConstants.kDriveKinematics.toSwerveModuleStates(
+        new ChassisSpeeds(xSpeedDelivered, ySpeedDelivered, rotDelivered));
+    SwerveDriveKinematics.desaturateWheelSpeeds(
+        swerveModuleStates, DriveConstants.kMaxSpeedMetersPerSecond);
+    m_frontLeft.setDesiredState(swerveModuleStates[0]);
+    m_frontRight.setDesiredState(swerveModuleStates[1]);
+    m_rearLeft.setDesiredState(swerveModuleStates[2]);
+    m_rearRight.setDesiredState(swerveModuleStates[3]);
+  }
+
+  public ChassisSpeeds getSpeeds() {
+    return DriveConstants.kDriveKinematics.toChassisSpeeds(getSwerveModuleStates());
+  }
+
+  public SwerveModuleState[] getSwerveModuleStates() {
+    return new SwerveModuleState[] {
+        m_frontLeft.getState(),
+        m_frontRight.getState(),
+        m_rearLeft.getState(),
+        m_rearRight.getState()
+    };
+}
 
   /**
    * Sets the wheels into an X formation to prevent movement.
