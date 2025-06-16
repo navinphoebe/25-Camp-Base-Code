@@ -6,13 +6,7 @@ package frc.robot.util.constants;
 
 /** Add your docs here. */
 public class IntakeConstants {
-
-    //TODO: Find the actual value
-    public static final double MAX_HAS_CORAL_DISTANCE = .1;
-
-    public static final double REVERSE_SPEED = -0.2;
-    public static final double INTAKE_SPEED = 0.2;
-
+    // Values for simulation
     public static final double JKG_METERS_SQUARED = 0.01;
     public static final double GEAR_RATIO = 1;
 }

@@ -14,16 +14,8 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.commands.DrivetrainDefaultCommand;
-import frc.robot.commands.ElevatorDefaultCommand;
-import frc.robot.commands.ElevatorGoToPositionCommand;
-import frc.robot.commands.IntakeCoralCommand;
-import frc.robot.commands.ShootCoralCommand;
 import frc.robot.subsystems.DrivetrainSubsystem;
-import frc.robot.subsystems.ElevatorSubsystem;
-import frc.robot.subsystems.IntakeSubsystem;
-import frc.robot.subsystems.LimelightSubsystem;
 import frc.robot.subsystems.PathPlannerConfigurator;
-import frc.robot.subsystems.ShooterSubsystem;
 import frc.robot.util.constants.DeviceConstants;
 
 /**
@@ -35,13 +27,9 @@ import frc.robot.util.constants.DeviceConstants;
  */
 public class Robot extends LoggedRobot {
 
-  public static final IntakeSubsystem INTAKE_SUBSYSTEM = new IntakeSubsystem();
-  public static final ShooterSubsystem SHOOTER_SUBSYSTEM = new ShooterSubsystem();
   public static final DrivetrainSubsystem DRIVETRAIN_SUBSYSTEM = new DrivetrainSubsystem();
   public static final PathPlannerConfigurator PATH_PLANNER_CONFIGURATOR = new PathPlannerConfigurator();
-  public static final ElevatorSubsystem ELEVATOR_SUBSYSTEM = new ElevatorSubsystem();
   public static final CommandXboxController DRIVER_CONTROLLER = new CommandXboxController(DeviceConstants.DRIVER_CONTROLLER);
-  public static final LimelightSubsystem LIMELIGHT_SUBSYSTEM = new LimelightSubsystem();
 
 
   private Command autoCommand;
@@ -60,12 +48,6 @@ public class Robot extends LoggedRobot {
   }
 
   public void setButtonBindings() {
-    DRIVER_CONTROLLER.x().whileTrue(new IntakeCoralCommand());
-    DRIVER_CONTROLLER.y().whileTrue(new ShootCoralCommand());
-    DRIVER_CONTROLLER.a().onTrue(new ElevatorGoToPositionCommand(.6));
-    DRIVER_CONTROLLER.b().onTrue(new ElevatorGoToPositionCommand(0));
-
-    ELEVATOR_SUBSYSTEM.setDefaultCommand(new ElevatorDefaultCommand());
     DRIVETRAIN_SUBSYSTEM.setDefaultCommand(new DrivetrainDefaultCommand());
   }
 

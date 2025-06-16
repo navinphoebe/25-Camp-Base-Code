@@ -6,10 +6,5 @@ package frc.robot.util.constants;
 
 /** Add your docs here. */
 public class DeviceConstants {
-
-    public static final int INTAKE_SENSOR = 0;
-    public static final int INTAKE_MOTOR = 0;
     public static final int DRIVER_CONTROLLER = 0;
-    public static final int SHOOTER_MOTOR = 1;
-    public static final int ELEVATOR_MOTOR = 2;
 }
