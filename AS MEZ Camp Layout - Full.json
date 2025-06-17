@@ -1,0 +1,210 @@
+{
+  "hubs": [
+    {
+      "x": -8,
+      "y": 0,
+      "width": 1536,
+      "height": 816,
+      "state": {
+        "sidebar": {
+          "width": 379,
+          "expanded": [
+            "/AdvantageKit/RealOutputs/DrivetrainSubsystem/Pose/translation",
+            "/AdvantageKit/RealOutputs/DrivetrainSubsystem/CombinedPose",
+            "/SmartDashboard/VisionSystemSim-main/Sim Field",
+            "/SmartDashboard/Field",
+            "/AdvantageKit/RealOutputs/Camera",
+            "/AdvantageKit/RealOutputs/PoseEstimator/Pose",
+            "/AdvantageKit/RealOutputs/FL/rotation",
+            "/AdvantageKit/RealOutputs/DrivetrainSimSubsystem",
+            "/AdvantageKit/RealOutputs/CommandSwerveDrivetrain",
+            "/AdvantageKit/RealOutputs/Speed actual",
+            "/AdvantageKit/RealOutputs/Speed Drive Commanded",
+            "/AdvantageKit/RealOutputs/Speed given",
+            "/AdvantageKit/RealOutputs/Speed thingy",
+            "/AdvantageKit/RealOutputs/Base/rotation",
+            "/AdvantageKit/RealOutputs/Base/translation",
+            "/AdvantageKit/RealOutputs/Mech Poses/0",
+            "/AdvantageKit/RealOutputs/Mech Poses/0/translation",
+            "/AdvantageKit/RealOutputs/DrivetrainSubsystem/Pose/rotation",
+            "/AdvantageKit/RealOutputs/Working point",
+            "/AdvantageKit/RealOutputs/Mech Poses/4",
+            "/AdvantageKit/RealOutputs/Mech Poses/4/rotation",
+            "/AdvantageKit/RealOutputs/Mech Poses/4/rotation/q",
+            "/AdvantageKit/RealOutputs/Mech Poses/1",
+            "/AdvantageKit/RealOutputs/Mech Poses/1/translation",
+            "/AdvantageKit/RealOutputs/Mech Poses/2",
+            "/AdvantageKit/RealOutputs/Mech Poses/2/translation",
+            "/AdvantageKit/RealOutputs/Mech Poses/3",
+            "/AdvantageKit/RealOutputs/Mech Poses/3/translation",
+            "/AdvantageKit/RealOutputs/AlgaeIntakeVisualizer",
+            "/AdvantageKit/RealOutputs/MechSim/AlgaeIntake/translation",
+            "/AdvantageKit/RealOutputs/MechSim/AlgaeIntake/rotation",
+            "/AdvantageKit/RealOutputs/MechSim/AlgaeIntake/rotation/q",
+            "/AdvantageKit/RealOutputs/current speeds",
+            "/AdvantageKit/RealOutputs/Differences",
+            "/AdvantageKit/RealOutputs/Differences/translation",
+            "/AdvantageKit/RealOutputs/sent speeds",
+            "/AdvantageKit/RealOutputs/speeds",
+            "/AdvantageKit/RealOutputs/Speeds sent",
+            "/AdvantageKit/RealOutputs/Tag1/rotation",
+            "/AdvantageKit/RealOutputs/Tag1/rotation/q",
+            "/AdvantageKit/RealOutputs/Tag1/translation",
+            "/AdvantageKit/RealOutputs/Tag2/rotation",
+            "/AdvantageKit/RealOutputs/Tag2/rotation/q",
+            "/AdvantageKit/RealOutputs/Tag2/translation",
+            "/AdvantageKit/RealOutputs/Tag3/rotation",
+            "/AdvantageKit/RealOutputs/Tag3/rotation/q",
+            "/AdvantageKit/RealOutputs/Tag3/translation",
+            "/AdvantageKit/RealOutputs/Tag4/rotation",
+            "/AdvantageKit/RealOutputs/Tag4/translation",
+            "/AdvantageKit/RealOutputs/Tag4/rotation/q",
+            "/AdvantageKit/RealOutputs/Tag5/rotation",
+            "/AdvantageKit/RealOutputs/Tag5/rotation/q",
+            "/AdvantageKit/RealOutputs/Tag5/translation",
+            "/AdvantageKit/RealOutputs/Tag6/rotation",
+            "/AdvantageKit/RealOutputs/Tag6/rotation/q",
+            "/AdvantageKit/RealOutputs/Tag6/translation",
+            "/AdvantageKit/RealOutputs/Tag7/rotation",
+            "/AdvantageKit/RealOutputs/Tag7/rotation/q",
+            "/AdvantageKit/RealOutputs/Tag7/translation",
+            "/AdvantageKit/RealOutputs/Tag8/rotation",
+            "/AdvantageKit/RealOutputs/Tag8/rotation/q",
+            "/AdvantageKit/RealOutputs/Tag8/translation",
+            "/AdvantageKit/RealOutputs/Tag9/rotation",
+            "/AdvantageKit/RealOutputs/Tag9/rotation/q",
+            "/AdvantageKit/RealOutputs/Tag9/translation",
+            "/AdvantageKit/RealOutputs/Tag10/rotation",
+            "/AdvantageKit/RealOutputs/Tag10/rotation/q",
+            "/AdvantageKit/RealOutputs/Tag10/translation",
+            "/AdvantageKit/RealOutputs/Tag11/rotation",
+            "/AdvantageKit/RealOutputs/Tag11/rotation/q",
+            "/AdvantageKit/RealOutputs/Tag11/translation",
+            "/AdvantageKit/RealOutputs/Tag12/rotation",
+            "/AdvantageKit/RealOutputs/Tag12/rotation/q",
+            "/AdvantageKit/RealOutputs/Tag12/translation",
+            "/AdvantageKit/RealOutputs/Tag13/rotation",
+            "/AdvantageKit/RealOutputs/Tag13/rotation/q",
+            "/AdvantageKit/RealOutputs/Tag13/translation",
+            "/AdvantageKit/RealOutputs/Tag14",
+            "/AdvantageKit/RealOutputs/Tag14/rotation",
+            "/AdvantageKit/RealOutputs/Tag14/rotation/q",
+            "/AdvantageKit/RealOutputs/Tag14/translation",
+            "/AdvantageKit/RealOutputs/null",
+            "/RealOutputs/Selected and Seen Tag",
+            "/AdvantageKit/RealOutputs/Front-Left-Camera April Tags",
+            "/AdvantageKit/RealOutputs/Front-Right-Camera April Tags",
+            "/AdvantageKit/RealOutputs/Side-Left-Camera April Tags",
+            "/AdvantageKit/RealOutputs/Side-Right-Camera April Tags",
+            "/AdvantageKit/RealOutputs/MechSim/Arm/rotation",
+            "/AdvantageKit/RealOutputs/MechSim/Arm/rotation/q",
+            "/AdvantageKit/RealOutputs/PhotonTrackedTarget [yaw=-0.06507500455571455, pitch=12.157550796281797, area=0.05477432344969202, skew=0.0, fiducialId=18, objDetectId=-1, objDetectConf=-1.0, bestCameraToTarget=Transform3d(Translation3d(X",
+            "/AdvantageKit/RealOutputs/PhotonTrackedTarget [yaw=-0.6817947059412993, pitch=-0.2943556430288003, area=0.04163757201331464, skew=0.0, fiducialId=18, objDetectId=-1, objDetectConf=-1.0, bestCameraToTarget=Transform3d(Translation3d(X",
+            "/AdvantageKit/RealOutputs/PhotonTrackedTarget [yaw=-0.06507500455571455, pitch=12.157550796281797, area=0.05477432344969202, skew=0.0, fiducialId=18, objDetectId=-1, objDetectConf=-1.0, bestCameraToTarget=Transform3d(Translation3d(X/ 4.19, Y",
+            "/SmartDashboard/DrivetrainSubsystem",
+            "/SmartDashboard/CoralArmSubsystem",
+            "/PathPlanner",
+            "/PathPlanner/vel",
+            "/AdvantageKit/RealOutputs/VisionSubsystem/Front-Right-Camera April Tags",
+            "/AdvantageKit/RealOutputs/VisionSubsystem/Front-Left-Camera April Tags",
+            "/AdvantageKit/RealOutputs/Commands",
+            "/AdvantageKit/RealOutputs/Commands/PathFinding",
+            "/AdvantageKit/RealOutputs/Commands/PathFinding/Odometry Error/translation",
+            "/AdvantageKit/RealOutputs/Commands/PathFinding/Pose Estimator Error",
+            "/AdvantageKit/RealOutputs/Commands/PathFinding/Pose Estimator Error/translation",
+            "/SmartDashboard/Drive PID",
+            "/AdvantageKit/RealOutputs/MechSim/Elevator/0",
+            "/AdvantageKit/RealOutputs/VisionSubsystem",
+            "/AdvantageKit/RealOutputs/VisionSubsystem/Standard Deviation FL",
+            "/AdvantageKit/RealOutputs/VisionSubsystem/Standard Deviation FR",
+            "/AdvantageKit/RealOutputs/DrivetrainSubsystem/RobotRealtiveDiffernce",
+            "/AdvantageKit/RealOutputs/DrivetrainSubsystem/RobotRealtiveDiffernce/rotation",
+            "/AdvantageKit/RealOutputs/DrivetrainSubsystem/RobotRealtiveDiffernce/translation",
+            "/RealOutputs",
+            "/RealOutputs/CoralArmSubsystem",
+            "/AdvantageKit/RealOutputs",
+            "/AdvantageKit/RealOutputs/PathPlanner/errors",
+            "/AdvantageKit/RealOutputs/PathPlanner/infos",
+            "/AdvantageKit/RealOutputs/PathPlanner/warnings",
+            "/AdvantageKit"
+          ]
+        },
+        "tabs": {
+          "selected": 1,
+          "tabs": [
+            {
+              "type": 0,
+              "title": "",
+              "controller": null,
+              "controllerUUID": "facyvy90s84vwl915bam1b9vmnkbxzt7",
+              "renderer": "#/",
+              "controlsHeight": 0
+            },
+            {
+              "type": 3,
+              "title": "3D Field",
+              "controller": {
+                "sources": [
+                  {
+                    "type": "robot",
+                    "logKey": "NT:/AdvantageKit/RealOutputs/DrivetrainSubsystem/Pose",
+                    "logType": "Pose2d",
+                    "visible": true,
+                    "options": {
+                      "model": "2025 MEZ Camp"
+                    }
+                  },
+                  {
+                    "type": "component",
+                    "logKey": "NT:/AdvantageKit/RealOutputs/MechSim/Elevator",
+                    "logType": "Pose3d[]",
+                    "visible": true,
+                    "options": {}
+                  },
+                  {
+                    "type": "gamePiece",
+                    "logKey": "NT:/AdvantageKit/RealOutputs/CoralVisualizer/HeldCoral",
+                    "logType": "Pose3d[]",
+                    "visible": true,
+                    "options": {
+                      "variant": "Coral"
+                    }
+                  },
+                  {
+                    "type": "gamePiece",
+                    "logKey": "NT:/AdvantageKit/RealOutputs/CoralVisualizer/ShotCoral",
+                    "logType": "Pose3d[]",
+                    "visible": true,
+                    "options": {
+                      "variant": "Coral"
+                    }
+                  }
+                ],
+                "game": "2025 Field (Welded)",
+                "origin": "blue"
+              },
+              "controllerUUID": "9nmvay7rktwhl3ihlp3h1jckjx2my57h",
+              "renderer": {
+                "cameraIndex": -8,
+                "orbitFov": 50,
+                "cameraPosition": [
+                  -10.28116,
+                  1.5748000000000002,
+                  -1.88861845282827e-15
+                ],
+                "cameraTarget": [
+                  0,
+                  0.5,
+                  0
+                ]
+              },
+              "controlsHeight": 232
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "satellites": [],
+  "version": "4.1.0"
+}
