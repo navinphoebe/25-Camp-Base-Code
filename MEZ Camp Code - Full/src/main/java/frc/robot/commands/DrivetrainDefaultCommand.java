@@ -32,7 +32,7 @@ public class DrivetrainDefaultCommand extends Command {
     y = applyDeadband(y);
     r = applyRotationalDeadband(r);
     
-    if (Robot.DRIVER_CONTROLLER.leftTrigger().getAsBoolean()) {
+    if (Robot.DRIVER_CONTROLLER.rightTrigger().getAsBoolean()) {
       x *= DrivetrainConstants.CUT_POWER;
       y *= DrivetrainConstants.CUT_POWER;
       r *= DrivetrainConstants.CUT_POWER;
