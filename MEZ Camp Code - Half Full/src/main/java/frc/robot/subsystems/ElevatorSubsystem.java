@@ -25,6 +25,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Robot;
 import frc.robot.util.constants.DeviceConstants;
 import frc.robot.util.constants.ElevatorConstants;
+import frc.robot.util.simulation.MechanismSim;
 
 public class ElevatorSubsystem extends SubsystemBase {
   private final SparkMax _elevatorMotor = new SparkMax(DeviceConstants.ELEVATOR_MOTOR, MotorType.kBrushless);
@@ -58,6 +59,10 @@ public class ElevatorSubsystem extends SubsystemBase {
     _controller.setReference(0, ControlType.kMAXMotionPositionControl, ClosedLoopSlot.kSlot0);
   }
 
+  public double getPosition() {
+    return 0;
+  }
+
   public void updateSimulation() {
     _elevatorSim.setInput(_motorSim.getAppliedOutput() * RoboRioSim.getVInVoltage());
 
@@ -79,5 +84,6 @@ public class ElevatorSubsystem extends SubsystemBase {
     if (Robot.isSimulation()) {
       updateSimulation();
     }
+    MechanismSim.updateElevatorHeight(getPosition());
   }
 }
