@@ -45,7 +45,7 @@ public class IntakeSubsystem extends SubsystemBase {
     if (Robot.isSimulation()) {
       return _intakeSensorChooser.get();
     }
-    //TODO: Write real logic
+    //TODO: Write working logic
     return false;
   }
 
