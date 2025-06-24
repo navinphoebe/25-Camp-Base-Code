@@ -25,14 +25,22 @@ import frc.robot.util.constants.IntakeConstants;
 public class IntakeSubsystem extends SubsystemBase {
   /** Creates a new IntakeSubsystem. */
   private final CANrange _intakeSensor = new CANrange(DeviceConstants.INTAKE_SENSOR);
-  private final SparkMax _intakeMotor = new SparkMax(DeviceConstants.INTAKE_MOTOR, MotorType.kBrushless);
+  private final SparkMax _intakeMotorOne = new SparkMax(DeviceConstants.INTAKE_MOTOR, MotorType.kBrushless);
+  private final SparkMax _intakeMotorTwo = new SparkMax(DeviceConstants.SHOOTER_MOTOR, MotorType.kBrushless);
 
-  // Values for simulation
-  private final DCMotor _intakeGearbox = DCMotor.getNEO(1);
-  private final SparkMaxSim _motorSim = new SparkMaxSim(_intakeMotor, _intakeGearbox);
-  private final FlywheelSim _intakeSim = new FlywheelSim(LinearSystemId.createFlywheelSystem(_intakeGearbox,
-      IntakeConstants.JKG_METERS_SQUARED, IntakeConstants.GEAR_RATIO), _intakeGearbox);
+  // Values for simulation - motor 1
+  private final DCMotor _intakeGearboxOne = DCMotor.getNEO(1);
+  private final SparkMaxSim _motorSimOne = new SparkMaxSim(_intakeMotorOne, _intakeGearboxOne);
+  private final FlywheelSim _intakeSimOne = new FlywheelSim(LinearSystemId.createFlywheelSystem(_intakeGearboxOne,
+      IntakeConstants.JKG_METERS_SQUARED, IntakeConstants.GEAR_RATIO), _intakeGearboxOne);
   private final LoggedDashboardChooser<Boolean> _intakeSensorChooser = new LoggedDashboardChooser<>("Intake Sensor");
+
+  // Values for simulation - motor 2
+  private final DCMotor _intakeGearboxTwo = DCMotor.getNEO(1);
+  private final SparkMaxSim _motorSimTwo = new SparkMaxSim(_intakeMotorTwo, _intakeGearboxTwo);
+  private final FlywheelSim _intakeSimTwo = new FlywheelSim(LinearSystemId.createFlywheelSystem(_intakeGearboxTwo,
+      IntakeConstants.JKG_METERS_SQUARED, IntakeConstants.GEAR_RATIO), _intakeGearboxTwo);
+
 
   public IntakeSubsystem() {
     if (Robot.isSimulation()) {
@@ -49,25 +57,26 @@ public class IntakeSubsystem extends SubsystemBase {
     return false;
   }
 
-  public void updateSimulation() {
-    _intakeSim.setInput(_motorSim.getAppliedOutput() * RoboRioSim.getVInVoltage());
-    _intakeSim.update(0.02);
+  public void updateSimulation(FlywheelSim intakeSim, SparkMaxSim motorSim) {
+    intakeSim.setInput(motorSim.getAppliedOutput() * RoboRioSim.getVInVoltage());
+    intakeSim.update(0.02);
 
-    _motorSim.iterate(
+    motorSim.iterate(
         Units.radiansPerSecondToRotationsPerMinute( // Motor Velocity, in RPM
-            _intakeSim.getAngularVelocityRadPerSec()),
+            intakeSim.getAngularVelocityRadPerSec()),
         RoboRioSim.getVInVoltage(), // Simulated battery voltage, in Volts
         0.02); // Time interval, in Seconds
 
     RoboRioSim.setVInVoltage(
-        BatterySim.calculateDefaultBatteryLoadedVoltage(_intakeSim.getCurrentDrawAmps()));
+        BatterySim.calculateDefaultBatteryLoadedVoltage(intakeSim.getCurrentDrawAmps()));
   }
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
     if (Robot.isSimulation()) {
-      updateSimulation();
+      updateSimulation(_intakeSimOne, _motorSimOne);
+      updateSimulation(_intakeSimTwo, _motorSimTwo);
     }
   }
 }
