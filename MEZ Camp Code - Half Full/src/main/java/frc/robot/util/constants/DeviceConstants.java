@@ -11,5 +11,5 @@ public class DeviceConstants {
     public static final int INTAKE_MOTOR_ONE = 1;
     public static final int INTAKE_MOTOR_TWO = 2;
     public static final int DRIVER_CONTROLLER = 0;
-    public static final int ELEVATOR_MOTOR = 2;
+    public static final int ELEVATOR_MOTOR = 3;
 }
