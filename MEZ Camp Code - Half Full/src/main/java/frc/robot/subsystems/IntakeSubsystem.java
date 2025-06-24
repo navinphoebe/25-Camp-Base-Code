@@ -25,8 +25,8 @@ import frc.robot.util.constants.IntakeConstants;
 public class IntakeSubsystem extends SubsystemBase {
   /** Creates a new IntakeSubsystem. */
   private final CANrange _intakeSensor = new CANrange(DeviceConstants.INTAKE_SENSOR);
-  private final SparkMax _intakeMotorOne = new SparkMax(DeviceConstants.INTAKE_MOTOR, MotorType.kBrushless);
-  private final SparkMax _intakeMotorTwo = new SparkMax(DeviceConstants.SHOOTER_MOTOR, MotorType.kBrushless);
+  private final SparkMax _intakeMotorOne = new SparkMax(DeviceConstants.INTAKE_MOTOR_ONE, MotorType.kBrushless);
+  private final SparkMax _intakeMotorTwo = new SparkMax(DeviceConstants.INTAKE_MOTOR_TWO, MotorType.kBrushless);
 
   // Values for simulation - motor 1
   private final DCMotor _intakeGearboxOne = DCMotor.getNEO(1);
