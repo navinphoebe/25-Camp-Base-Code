@@ -13,13 +13,13 @@ public class ShootCoralCommand extends Command {
   /** Creates a new ShootCoralCommand. */
   public ShootCoralCommand() {
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(Robot.SHOOTER_SUBSYSTEM);
+    addRequirements(Robot.INTAKE_SUBSYSTEM);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    Robot.SHOOTER_SUBSYSTEM.shoot();
+    Robot.INTAKE_SUBSYSTEM.shoot();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -29,7 +29,7 @@ public class ShootCoralCommand extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    Robot.SHOOTER_SUBSYSTEM.stop();
+    Robot.INTAKE_SUBSYSTEM.stop();
     CoralVisualizer.shoot().schedule();
   }
 
